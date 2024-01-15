@@ -6,18 +6,17 @@ const unsigned int WINDOW_HEIGHT = 520;
 
 int main() {
 	sf::RenderWindow window(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "SFML Project", sf::Style::Close);
+	
 	ResourcecHolder<sf::Texture, Textures::ID> textures;
 	textures.load(Textures::Asteroid, (std::string)"Resources/asteroid.png");
 	textures.load(Textures::Spaceship, (std::string)"Resources/spaceship.png");
-
-	float scale = 512.0f / 64.0f / 100.0f;
+	
+#pragma region Game Objects
 	sf::Sprite player;
 	player.setTexture(textures.get(Textures::Spaceship));
 
 	sf::Sprite asteroid;
 	asteroid.setTexture(textures.get(Textures::Asteroid));
-#pragma region Definitions
-
 #pragma endregion
 
 	float deltaTime = 0.0f;
