@@ -11,7 +11,7 @@ template <typename Resource, typename Identifier>
 class ResourcecHolder {
 public:
 	void load(Identifier id, const std::string &fileName); // resource loader
-	Resource &get(Identifier id); // resourcec access
+	Resource &get(Identifier id); // resource access
 	const Resource &get(Identifier id) const;
 
 private:
